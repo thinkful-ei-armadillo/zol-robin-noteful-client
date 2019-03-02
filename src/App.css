@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  max-width: 80vw;
+  justify-content: space-evenly;
+  margin: 0 auto;
+}
