@@ -9,6 +9,7 @@ class Folderlist extends Component {
     render(){
         const folders = this.context.folders
                                   .map(folder => {
+                                    //   console.log(folder)
                                         return (
                                             <li key={folder.id}>
                                                 <Link to={`/folder/${folder.id}`} id={folder.id} >

@@ -15,14 +15,15 @@ class Notelist extends Component {
         let notes = this.context.notes;
         const { folderId } = this.props.match.params;
         if (folderId){
-            notes = this.getNotesFolder(folderId);
+            notes = this.getNotesFolder(Number(folderId));
         }
-        console.log(notes)
+        
         return (
             <>
                 <ul>
                     {
                         notes.map(note => {
+                            console.log(note)
                                 return (
                                     <li key={note.id}>
                                         <h2 className='title'>

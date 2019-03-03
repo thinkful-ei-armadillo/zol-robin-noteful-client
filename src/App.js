@@ -65,6 +65,7 @@ class App extends Component {
 
   deleteNote = (noteId) => {
     const newNotes = this.state.notes.filter(note => note.id !== noteId)
+    console.log(noteId);
     this.setState({
       notes: newNotes
     })
@@ -88,7 +89,7 @@ class App extends Component {
       folderId: note.folder_id,
       modified: note.modified_date
     }
-    
+
     this.setState({
       notes: [...this.state.notes, newNote]
     })

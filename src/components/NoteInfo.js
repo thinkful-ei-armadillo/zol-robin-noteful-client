@@ -16,7 +16,7 @@ class NoteInfo extends Component {
 
     render(){
         const { noteId } = this.props.match.params
-        const note = this.getNoteInfo(noteId)
+        const note = this.getNoteInfo(Number(noteId));
         return (
             <div className='note'>
                 <h2 className='title'>

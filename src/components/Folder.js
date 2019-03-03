@@ -16,7 +16,7 @@ class Folder extends Component {
 
     render(){
         const { noteId }= this.props.match.params
-        const folder = this.findFolder(noteId)
+        const folder = this.findFolder(Number(noteId))
         return (
             <div className='folder-list'>
              <h3 className='folder-name'>
