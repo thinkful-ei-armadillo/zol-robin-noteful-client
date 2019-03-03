@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import NotefulContext from '../NotefulContext'; 
 import ValidationError from './validationError';
+// import { API_ENDPOINT } from '../config';
 
 export default class AddNote extends Component {
     constructor(props){
@@ -60,13 +61,14 @@ export default class AddNote extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        const API_ENDPOINT = 'https://secret-oasis-13375.herokuapp.com';
         let options = {
                         note_name: this.state.name,
                         folder_id: this.state.folderId,
                         content: this.state.content
                         // modified_date: this.state.modified,
                       }
-        fetch('http://localhost:8000/api/noteful/notes/', {
+        fetch(`${API_ENDPOINT}/api/noteful/notes/`, {
             method:'POST',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify(options),

@@ -11,6 +11,7 @@ import NoteInfo from './components/NoteInfo';
 import AddNote from './components/AddNote';
 import './App.css';
 import NotefulError from './components/notefulError';
+// import { API_ENDPOINT } from './config';
 
 class App extends Component {
   state = {
@@ -20,6 +21,7 @@ class App extends Component {
 
   // =================Update state with get request================
   componentDidMount(){
+    const API_ENDPOINT = 'https://secret-oasis-13375.herokuapp.com';
     const options = {
       method: 'GET',
       headers: {
@@ -28,8 +30,8 @@ class App extends Component {
     }
 
     Promise.all([
-        fetch('http://localhost:8000/api/noteful/folders', options),
-        fetch('http://localhost:8000/api/noteful/notes', options)
+        fetch(`${API_ENDPOINT}/api/noteful/folders`, options),
+        fetch(`${API_ENDPOINT}/api/noteful/notes`, options)
     ])
     .then(([res1, res2]) => {
       if(res1.ok && res2.ok) return Promise.all([res1.json(), res2.json()])

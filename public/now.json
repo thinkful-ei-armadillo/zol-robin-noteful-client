@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "alias": "noteful-app",
+    "alias": "noteful",
     "name": "noteful-app",
     "routes": [
         {

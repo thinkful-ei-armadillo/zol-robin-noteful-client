@@ -1,5 +1,6 @@
-import React, {Component} from 'react'
-import NotefulContext from '../NotefulContext'
+import React, {Component} from 'react';
+import NotefulContext from '../NotefulContext';
+// import { API_ENDPOINT } from '../config';
 
 export default class AddFolder extends Component {
   constructor(props) {
@@ -13,7 +14,9 @@ export default class AddFolder extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    fetch('http://localhost:8000/api/noteful/folders', {
+    const API_ENDPOINT = 'https://secret-oasis-13375.herokuapp.com';
+    
+    fetch(`${API_ENDPOINT}/api/noteful/folders`, {
       method:'POST',
       headers: {'content-type': 'application/json'},
       body: JSON.stringify({folder_name: this.state.folder}),
